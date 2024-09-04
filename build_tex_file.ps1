@@ -1,0 +1,2 @@
+$files = Get-ChildItem -Path . -Filter *.md -Recurse | Sort-Object FullName | ForEach-Object { $_.FullName }
+pandoc $files -o --read=markdown --write=latex --output=review_practices.tex --standalone --toc
